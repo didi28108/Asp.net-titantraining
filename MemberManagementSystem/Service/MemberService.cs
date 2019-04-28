@@ -15,8 +15,9 @@ namespace MemberManagementSystem.Service
             return db.Member.ToList();
         }
         public Member GetMemberById(int id)
-        {
-            return db.Member.Find(id);
+        {   
+            var target = db.Member.Find(id);
+            return target;
         }
         public void CreateMember(Member member)
         {
@@ -32,7 +33,12 @@ namespace MemberManagementSystem.Service
         public void EditMember(Member member)
         {
             Member target = GetMemberById(member.Id);
-            db.Entry(target).CurrentValues.SetValues(member);
+            //db.Entry(target).CurrentValues.SetValues(member);
+            //Not working. Don't know why.
+            target.Name = member.Name;
+            target.Age = member.Age;
+            target.Address = member.Address;
+            target.Tel = member.Tel;
             db.SaveChanges();
         }
     }

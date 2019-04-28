@@ -215,7 +215,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Member\Index.cshtml" />
     <Content Include="Views\Member\Create.cshtml" />
-    <Content Include="Views\Member\Edit.cshtml" />
+    <Content Include="Views\Member\EditPage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

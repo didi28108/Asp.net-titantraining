@@ -31,7 +31,7 @@ namespace MemberManagementSystem.Controllers
             memberService.DeleteMember(id);
             return RedirectToAction("index");
         }
-        public ActionResult Edit(int id)
+        public ActionResult EditPage(int id)
         {
             return PartialView(memberService.GetMemberById(id));
         }
