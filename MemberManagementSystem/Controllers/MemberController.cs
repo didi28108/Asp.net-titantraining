@@ -23,7 +23,10 @@ namespace MemberManagementSystem.Controllers
         [HttpPost]
         public ActionResult Create(Member member)
         {
-            memberService.CreateMember(member);
+            if (ModelState.IsValid)
+            {
+                memberService.CreateMember(member);
+            }
             return RedirectToAction("index");
         }
         public ActionResult Delete(int id)
@@ -38,7 +41,10 @@ namespace MemberManagementSystem.Controllers
         [HttpPost]
         public ActionResult Edit(Member member)
         {
-            memberService.EditMember(member);
+            if (ModelState.IsValid)
+            {
+                memberService.EditMember(member);
+            }
             return RedirectToAction("index");
         }
     }
